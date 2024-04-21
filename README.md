@@ -5,4 +5,4 @@
 
 `pip install -r requirements.txt`
 
-[Cloud hosted version](https:///bk-bridge-b2pt2czqtehmzmcut8ija5.streamlit.app/)
+[Cloud hosted version](https://dsc205-datavisualization-finalproject-d88hrdmsfygxokktmtyf2f.streamlit.app//)
