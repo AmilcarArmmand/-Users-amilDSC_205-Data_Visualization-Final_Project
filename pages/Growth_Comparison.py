@@ -8,11 +8,8 @@ import os
 st.set_page_config(layout="wide")
 
 # Function to load data from a given file path, caching the data to avoid reloading
-@st.cache_data
 def load_data(file_path):
-    """Load CSV data from a specified file path."""
-    data = pd.read_csv(file_path)
-    return data
+    return pd.read_csv(file_path)
 
 # Define the paths to the population and GDP data CSV files
 population_file_path = os.path.join('data', 'population_percentage.csv')
