@@ -19,6 +19,8 @@ gdp_file_path = os.path.join('data', 'gdp_percentage.csv')
 population_df = load_data(population_file_path)
 gdp_df = load_data(gdp_file_path)
 
+st.title('Modernization of China: GDP and Population Growth Comparison')
+
 # Get the list of countries from the population DataFrame for the dropdown
 country_options = population_df['Country Name'].unique().tolist()
 
