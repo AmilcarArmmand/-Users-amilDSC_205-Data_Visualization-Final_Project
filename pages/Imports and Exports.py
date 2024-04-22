@@ -63,7 +63,7 @@ for index, row in filtered_data.iterrows():
         folium.CircleMarker(
             location=lat_lon,
             radius=radius,
-            popup=f"<strong>{partner_name}</strong><br>{trade_flow}: ${trade_value:,.0f}K",
+            popup=f"<strong>{partner_name}</strong><br>{trade_flow}: ${trade_value:,.0f},000",
             color='green' if trade_flow == 'Export' else 'blue',
             fill=True,
             fill_color='green' if trade_flow == 'Export' else 'blue'
