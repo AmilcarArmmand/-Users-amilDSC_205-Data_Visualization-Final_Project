@@ -30,3 +30,31 @@ st.dataframe(df, width=600, height=200)
 
 st.subheader('st.table shows the contents of entire DataFrame')
 st.table(data=df)
+
+
+with st.sidebar:
+    if st.button("Home"):
+        st.switch_page("console.py")
+    if st.button("Life Expectancy📈"):
+        st.switch_page("pages/Life_Expectancy.py")
+    if st.button("Growth Comparison📈"):
+        st.switch_page("pages/Growth_Comparison.py")
+    if st.button("High Speed Rail📈"):
+        st.switch_page("pages/High_Speed_Rail.py")
+    if st.button("Imports and Exports"):
+        st.switch_page("pages/Imports and Exports.py")
+    if st.button("Extreme Poverty"):
+        st.switch_page("pages/Poverty.py")
+    if st.button("Power Generation"):
+        st.switch_page("pages/Power_Generation.py")
+    if st.button("Renewable Power_📊"):
+        st.switch_page("pages/Renewable_Power.py")
+    if st.button("Agricultural Production"):
+        st.switch_page("pages/Agri_Production.py")
+    if st.button("Inspiration"):
+        st.switch_page("pages/inspiration.py")
+    if st.button("Trivia 🗃"):
+        st.switch_page("pages/media.py")
+    if st.button("Photo Gallery"):
+        st.switch_page("pages/Session_State_Basics.py")
+    

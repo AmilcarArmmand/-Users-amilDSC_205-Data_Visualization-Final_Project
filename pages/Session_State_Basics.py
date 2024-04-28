@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from menu import menu
 
 
 st.title("Session State Testing")
@@ -53,6 +54,15 @@ with col2:
                                  on_change = km_to_miles)
 
 
+if "counter" not in st.session_state:
+    st.session_state.counter = 0
+
+st.session_state.counter += 1
+
+st.header(f"This page has run {st.session_state.counter} times.")
+st.button("Run it again")
+
+
 @st.cache_data(persist=True)
 def fetch_and_clean_data(url):
     # Fetch data from URL here, and then clean it up
@@ -85,10 +95,21 @@ def get_data():
     return data
 
 
+
 URL = 'data/energy-consumption-by-source-and-country.csv'
 try:
     df = fetch_and_clean_data(URL)
     st.dataframe(df)
 
+
+    st.write(st.session_state)
 except TypeError:
     st.write('break point')
+
+with st.echo():
+    st.title("chart")
+
+    st.markdown("[![Click me](./app/static/fossil-fuels-per-capita.png)](./app/static/fossil-fuels-per-capita.png)")
+
+
+menu()

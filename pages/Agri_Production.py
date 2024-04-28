@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from urllib.error import URLError
+from menu import menu
 
 st.set_page_config(page_title="DataFrame Demo", page_icon="📊")
 
@@ -54,3 +55,6 @@ except URLError as e:
     """
         % e.reason
     )
+
+
+menu()

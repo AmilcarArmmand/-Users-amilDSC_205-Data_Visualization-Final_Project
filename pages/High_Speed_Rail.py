@@ -2,6 +2,7 @@
 import pandas as pd
 import streamlit as st
 from os import path
+from menu import menu
 
 
 # Set up the page layout to use the full width of the web page
@@ -60,3 +61,6 @@ st.dataframe(passenger_data, width=600, height=200)
 
 st.subheader('st.table shows the contents of entire DataFrame')
 st.table(data=passenger_data)
+
+
+menu()

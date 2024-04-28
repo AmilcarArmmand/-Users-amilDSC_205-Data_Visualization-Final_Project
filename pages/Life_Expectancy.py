@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 from os import path
+from menu import menu
 
 
 # Set up the page layout to use the full width of the web page
@@ -56,3 +57,7 @@ try:
 
 except ValueError:
     st.write('Oops')
+
+
+menu()
+

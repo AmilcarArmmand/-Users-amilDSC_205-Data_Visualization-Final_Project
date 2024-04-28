@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import os
+from menu import menu
+
 
 # Set up the page layout to use the full width of the web page
 st.set_page_config(layout="wide")
@@ -92,3 +94,5 @@ with col2:
     ax_gdp.tick_params(axis='y', labelsize=10)
     ax_gdp.grid(True, which='both', linestyle='--', linewidth=0.5)
     st.pyplot(fig_gdp)
+
+menu()

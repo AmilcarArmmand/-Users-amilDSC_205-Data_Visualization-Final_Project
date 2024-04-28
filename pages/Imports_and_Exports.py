@@ -4,6 +4,8 @@ import os
 import folium
 from streamlit_folium import folium_static
 import numpy as np
+from menu import menu
+
 
 # Set the layout to wide
 st.set_page_config(layout="wide")
@@ -72,3 +74,5 @@ for index, row in filtered_data.iterrows():
 # Display map in Streamlit app
 with col2:
     folium_static(m)
+
+menu()

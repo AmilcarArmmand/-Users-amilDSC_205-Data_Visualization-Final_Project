@@ -72,7 +72,7 @@ messageFormat = "%(asctime)s %(message)s"
 # Controls whether the default sidebar page navigation in a multi-page app is displayed.
 
 # Default: true
-# showSidebarNavigation = true
+showSidebarNavigation = false
 
 
 [runner]
@@ -137,7 +137,7 @@ magicEnabled = true
 # * "none" : Streamlit will not watch files.
 
 # Default: "auto"
-# fileWatcherType = "auto"
+fileWatcherType = "auto"
 
 # Symmetric key used to produce signed cookies. If deploying on multiple replicas, this should
 # be set to the same value across all replicas to ensure they all share the same secret.
