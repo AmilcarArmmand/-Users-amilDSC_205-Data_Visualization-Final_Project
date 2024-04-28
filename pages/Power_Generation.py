@@ -8,7 +8,7 @@ from menu import menu
 # Set up the page layout to use the full width of the web page
 st.set_page_config(page_title="Life Expectancy", page_icon="📈", layout="wide")
 
-st.markdown("# Power Generaltion")
+st.markdown("# Power Generation")
 st.sidebar.header("Power Generation")
 
 
@@ -22,15 +22,11 @@ def get_data():
 
 try:
     df = get_data()
+    st.subheader('st.dataframe, width = 600px, height = 200px')
+    st.dataframe(df, width=600, height=200)
 
-except Error:
+except TypeError:
     st.write('break point')
-
-st.subheader('st.dataframe, width = 600px, height = 200px')
-st.dataframe(df, width=600, height=200)
-
-#st.subheader('st.table shows the contents of entire DataFrame')
-#st.table(data=df)
 
     
 menu()
