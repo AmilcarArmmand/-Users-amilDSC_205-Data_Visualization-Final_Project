@@ -2,6 +2,7 @@
 import pandas as pd
 import streamlit as st
 from os import path
+from menu import menu
 
 
 # Set up the page layout to use the full width of the web page
@@ -58,3 +59,4 @@ with st.sidebar:
     if st.button("Photo Gallery"):
         st.switch_page("pages/Session_State_Basics.py")
     
+menu()
