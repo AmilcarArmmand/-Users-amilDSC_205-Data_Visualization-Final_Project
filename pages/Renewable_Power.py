@@ -29,8 +29,5 @@ except Error:
 st.subheader('st.dataframe, width = 600px, height = 200px')
 st.dataframe(df, width=600, height=200)
 
-st.subheader('st.table shows the contents of entire DataFrame')
-st.table(data=df)
-
 
 menu()
