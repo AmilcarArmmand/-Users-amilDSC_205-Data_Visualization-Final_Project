@@ -20,30 +20,32 @@ st.sidebar.success("Select a category below.")
 st.markdown(
     """
     **👈 Select a page from the sidebar**
-    
+
 """
 )
 st.divider()
 
 
-
 with st.container():
-    tab1, tab2, tab3, tab4 = st.tabs(["Menu items", "📈 Chart", "📈 Chart", "🗃 Data"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Project areas", "📈 Chart", "📈 Photo Gallery", "🗃 Data"])
 
     with tab1:
-        col1, col2, col3 = st.columns([1, 1, 3])
+        col1, col2, col3 = st.columns([1, 1, 1])
         with col1:
-            st.subheader("col 1")
-            
+            st.subheader("topic/point1")
+
         with col2:
-            st.subheader("col 2")
-            
+            st.subheader("topic/point2")
+
+        with col3:
+            st.subheader("topic/point 3")
+
         with tab2:
             with st.container():
                 st.header("tab2")
-                st.write("This is inside the container")
+                st.write("Placeholder. This is inside the container")
 
-                # You can call any Streamlit command, including custom components:
+                # Custom component:
                 st.bar_chart(np.random.randn(50, 3))
 
         with tab3:
