@@ -14,4 +14,4 @@ def menu():
      st.sidebar.page_link("pages/Agri_Production.py", label="Agricultural Production")
      st.sidebar.page_link("pages/inspiration.py", label="Inspiration")
      st.sidebar.page_link("pages/media.py", label="Trivia 🗃")    
-     st.sidebar.page_link("pages/Session_State_Basics.py", label="Photo Gallery")
+     # st.sidebar.page_link("pages/Session_State_Basics.py", label="Photo Gallery")
