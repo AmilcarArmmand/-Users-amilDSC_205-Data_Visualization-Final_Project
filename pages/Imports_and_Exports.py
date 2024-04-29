@@ -27,12 +27,17 @@ country_locations = load_data(country_locations_path)
 # Streamlit app title
 st.title('Modernization of China: A Trade Perspective')
 
+# Explanatory text
+st.markdown("""
+China's transformation into a global export leader began with economic reforms in the late 1970s when its global trade share was under 1%. Efforts to join the General Agreement on Tariffs and Trade (GATT) in 1986 were initially unsuccessful, delaying its integration into the global economy for 15 years. By the turn of the century, the rise of global value chains (GVCs) and China's entry into the World Trade Organization (WTO) in 2001 catalyzed its ascent as a manufacturing powerhouse. This was further supported by advancements in transport and communication technologies in the mid-1990s. China's accession to the WTO helped solidify its role in the global market, leading to rapid export growth and establishing it as the top global exporter by 2010.
+""")
+
 # Streamlit sidebar for user input
 col1, col2 = st.columns((1, 7))
 
 with col1:
     year = st.radio('Select the Year', [1992, 2021])
-    trade_flow = st.radio('Select Trade Flow', ['Import', 'Export'])
+    trade_flow = st.radio('Select Trade Flow', ['Export', 'Import'])
 
 # Filter data based on the selected year
 filtered_data = load_data(data_1992_path if year == 1992 else data_2021_path)

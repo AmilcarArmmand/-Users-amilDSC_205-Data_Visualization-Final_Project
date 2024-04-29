@@ -23,6 +23,11 @@ gdp_df = load_data(gdp_file_path)
 
 st.title('Modernization of China: GDP and Population Growth Comparison')
 
+# Explanatory text
+st.markdown("""
+From 1960 to 2023, China's significant population and economic growth can be attributed to sweeping economic reforms initiated in the late 1970s that opened up the country to foreign investment and trade. The establishment of Special Economic Zones offered incentives for international businesses, while agricultural reforms boosted productivity and efficiency. Additionally, China's accession to the World Trade Organization in 2001 catalyzed its integration into the global economy, making it a hub for manufacturing and exporting, which you can see in the Import and Exports page. These changes not only transformed China's economy but also contributed to a sharp rise in living standards, resulting in both economic and population growth​.
+""")
+
 # Get the list of countries from the population DataFrame for the dropdown
 country_options = population_df['Country Name'].unique().tolist()
 
