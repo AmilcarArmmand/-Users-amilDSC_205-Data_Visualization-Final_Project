@@ -22,9 +22,11 @@ def get_data():
 
 try:
     df = get_data()
-    st.subheader('st.dataframe, width = 600px, height = 200px')
-    st.dataframe(df, width=600, height=200)
+    #st.subheader('st.dataframe, width = 600px, height = 200px')
+    #st.dataframe(df, width=600, height=200)
 
+    st.markdown("[![Click me](./app/static/fossil-fuels-per-capita.png)](./app/static/fossil-fuels-per-capita.png)")
+    #st.image(('../static/fossil-fuels-per-capita.png'))
 except TypeError:
     st.write('break point')
 
