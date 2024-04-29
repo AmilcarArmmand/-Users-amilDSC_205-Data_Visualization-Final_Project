@@ -73,6 +73,6 @@ for index, row in filtered_data.iterrows():
 
 # Display map in Streamlit app
 with col2:
-    folium_static(m)
+    folium_static(m, width=1200, height=600)
 
 menu()
