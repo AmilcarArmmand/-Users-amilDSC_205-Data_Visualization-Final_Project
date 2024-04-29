@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from os import path
+import altair as alt
 from menu import menu
 
 
@@ -13,23 +13,29 @@ st.sidebar.header("Life Expectancy")
 st.write("""
 (Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)""")
 
+menu()
 
 @st.cache_data
 def get_data():
-    """        """
+    """Convert csv to dataframe"""
     URL = 'data/life-expectancy.csv'
     df = pd.read_csv(URL)
     df.rename(columns={'Period life expectancy at birth - Sex: all - Age: 0': 'life_expectancy'},
               inplace=True)
-    return df.set_index("Entity")
+    return df
 
-
+st.divider()
 try:
     df = get_data()
-    data = df.loc[:, ['Year', 'life_expectancy']]
+    data = df.set_index('Entity')
+    
     country_options = data.index.unique()
+    test = data.reset_index()
 
-    countries = st.multiselect("Choose countries", country_options, ["China", "United States"])
+    ## widget integration
+    countries = st.multiselect("Select countries to compare:",
+                               country_options, ["China", "United States"])
+    
     if not countries:
         st.error("Please select at least one country.")
     else:
@@ -48,16 +54,19 @@ try:
             ax.plot(data['Year'], data['life_expectancy'], label=country)
 
         # Create a line chart
-        ax.set_title('Life')
+        ax.set_title('Life Expectancy')
         ax.set_xlabel('Year')
-        ax.set_ylabel('Age')
-
+        ax.set_ylabel('Age (years)')
+        ax.legend()
+        
+        ax.axhline(0, color="grey", linewidth=1, linestyle='--')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+        
+        st.divider()
         # Display the chart
         st.pyplot(fig)
 
 except ValueError:
     st.write('Oops')
 
-
-menu()
 
