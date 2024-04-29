@@ -12,22 +12,7 @@ st.markdown("# Power Generaltion")
 st.sidebar.header("Power Generation")
 
 
-@st.cache_data
-def get_data():
-    """        """
-    URL = 'data/energy-consumption-by-source-and-country.csv'
-    df = pd.read_csv(URL)
-    return df
-
-
-try:
-    df = get_data()
-
-except Error:
-    st.write('break point')
-
-st.subheader('st.dataframe, width = 600px, height = 200px')
-st.dataframe(df, width=600, height=200)
+st.markdown("[![Click me](./app/static/renewables_1.jpg)](./app/static/renewables_1.jpg)")
 
 
 menu()
