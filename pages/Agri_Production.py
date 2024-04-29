@@ -13,6 +13,7 @@ st.write(
 (Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)"""
 )
 
+menu()
 
 @st.cache_data
 def get_UN_data():
@@ -23,6 +24,7 @@ def get_UN_data():
 
 try:
     df = get_UN_data()
+
     countries = st.multiselect(
         "Choose countries", list(df.index), ["China", "United States of America"]
     )
@@ -37,6 +39,7 @@ try:
         data = pd.melt(data, id_vars=["index"]).rename(
             columns={"index": "year", "value": "Gross Agricultural Product ($B)"}
         )
+        st.write("x=year, y")
         chart = (
             alt.Chart(data)
             .mark_area(opacity=0.3)
@@ -55,6 +58,3 @@ except URLError as e:
     """
         % e.reason
     )
-
-
-menu()

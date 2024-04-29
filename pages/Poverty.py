@@ -52,6 +52,10 @@ try:
         ax.set_xlabel('Year')
         ax.set_ylabel('Share of Population')
 
+        ax.legend()
+        
+        ax.axhline(0, color="grey", linewidth=1, linestyle='--')
+        ax.grid(True, which='both', linestyle='--', linewidth=0.5)
         # Display the chart
         st.pyplot(fig)
 

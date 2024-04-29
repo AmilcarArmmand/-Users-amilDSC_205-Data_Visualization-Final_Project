@@ -53,14 +53,9 @@ try:
     
 except TypeError:
     st.error('This is an error', icon="🚨")
-    st.write('break point')
 
-
-st.subheader('st.dataframe, width = 600px, height = 200px')
-st.dataframe(passenger_data, width=600, height=200)
-
-st.subheader('st.table shows the contents of entire DataFrame')
-st.table(data=passenger_data)
-
+#st.subheader('st.dataframe, width = 600px, height = 200px')
+#st.dataframe(passenger_data, width=600, height=200)
+#st.table(data=passenger_data)
 
 menu()
