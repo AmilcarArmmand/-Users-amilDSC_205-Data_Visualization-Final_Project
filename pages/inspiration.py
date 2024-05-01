@@ -3,21 +3,18 @@ import pandas as pd
 import altair as alt
 from urllib.error import URLError
 from menu import menu
+from pathlib import Path
 
+st.set_page_config(page_title="Inspiration", page_icon="📊")
 
-st.set_page_config(page_title="DataFrame Demo", page_icon="📊")
-
-st.markdown("# DataFrame Demo")
-st.sidebar.header("DataFrame Demo")
-st.write(
-    """This demo shows how to use `st.write` to visualize Pandas DataFrames.
-(Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)"""
-)
-
-st.markdown("[![Click me](./app/static/China_70_years_Shareable-1.jpg)](./app/static/China_70_years_Shareable-1.jpg)")
-st.markdown("[![Click me](./app/static/gross_production.png)](./app/static/gross_production.png)")
-st.markdown("[![Click me](./app/static/patent_grants.jpg)](./app/static/patent_grants.jpg)")
-st.markdown("[![Click me](./app/static/new_three_industies.jpg)](./app/static/new_three_industies.jpg)")
-
+st.markdown("# ")
+st.sidebar.header("Inspiration")
 
 menu()
+
+with st.container():
+    st.subheader('Timeline: 1949 - 2020')
+    st.image('https://github.com/AmilcarArmmand/DSC_205-Data_Visualization-Final_Project/blob/4a4645fac0c30a9675b2f06acbde3b89ffd1946c/static/China_70_years_Shareable-1.jpg?raw=true', caption='China_70_years.png')
+    
+
+
