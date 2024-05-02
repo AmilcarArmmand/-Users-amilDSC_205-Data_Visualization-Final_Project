@@ -13,6 +13,7 @@ st.sidebar.header("Extreme Poverty")
 st.write("""
 (Data courtesy of the [UN Data Explorer](http://data.un.org/Explorer.aspx).)""")
 
+menu()
 
 @st.cache_data
 def get_data():
@@ -29,7 +30,7 @@ try:
     data = df.loc[:, ['Year', 'poverty']]
     country_options = data.index.unique()
 
-    countries = st.multiselect("Choose countries", country_options, ["China", "United States"])
+    countries = st.multiselect("Choose countries to compare them:", country_options, ["China", "United States"])
     if not countries:
         st.error("Please select at least one country.")
     else:
@@ -48,7 +49,7 @@ try:
             ax.plot(data['Year'], data['poverty'], label=country)
 
         # Create a line chart
-        ax.set_title('Poverty')
+        ax.set_title('Extreme Poverty')
         ax.set_xlabel('Year')
         ax.set_ylabel('Share of Population')
 
@@ -62,4 +63,13 @@ try:
 except ValueError:
     st.write('Oops')
 
-menu()
+
+
+with st.expander("See explanation"):
+    st.write("""
+    What is extreme poverty?
+
+    It is living on less than \$2 a day (or actually less than $2.15).  It means having too little money to meet the basic needs that most of us take for granted, such as food, water, electricity and basic healthcare.
+
+    """)
+    st.link_button("Share of population living in extreme poverty, 2023", "https://ourworldindata.org/explorers/poverty-explorer?facet=none&Indicator=Share+in+poverty&Poverty+line=%242.15+per+day%3A+International+Poverty+Line&Household+survey+data+type=Show+data+from+both+income+and+consumption+surveys&Show+breaks+between+less+comparable+surveys=false&country=BGD~BOL~KEN~MOZ~NGA~ZMB")

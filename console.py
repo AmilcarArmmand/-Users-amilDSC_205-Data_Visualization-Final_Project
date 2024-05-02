@@ -17,10 +17,6 @@ st.write("# The Modernization of China :cn:")
 
 st.sidebar.success("Select a category below.")
 
-st.markdown(
-    """
-    **👈 Select a page from the sidebar**
-""")
 st.divider()
 
 col1, col2, col3 = st.columns([1, 1, 1])
